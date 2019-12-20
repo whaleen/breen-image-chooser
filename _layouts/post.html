@@ -1,0 +1,42 @@
+<h1 class="tc ttu gray fw1 tracked">{{ post.categories }}</h1>
+
+<article class="vh-100 dt w-100 ">
+  <div class="dtc v-mid tc ph3 ph4-l">
+
+    <article class="cf ttu">
+
+      <div class="fl w-100 w-50-ns bg-near-white tc">
+        <h1>Image A <i class="material-icons">thumb_up_alt</i></h1>
+        <img src="http://lorempixel.com/700/400/{{ post.categories }}/4/">
+      </div>
+      <div class="fl w-100 w-50-ns bg-light-gray tc">
+        <h1>Image B</h1>
+        <img src="http://lorempixel.com/700/400/{{ post.categories }}/5/">
+      </div>
+    </article>
+
+    <div class="flex items-center justify-center pa4">
+      <a href="#0" class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box">
+        <span class="pr1">Next <i class="material-icons">arrow_right_alt</i></span>
+      </a>
+    </div>
+
+    <h1>Ut enim as minim vaniam quis nostrud laboris</h1>
+
+  </div>
+</article>
+
+
+
+<div class="post-nav">
+  <div>
+    {% if page.previous.url %}
+    <a href="{{page.previous.url}}">&laquo;&nbsp;{{page.previous.title}}</a>
+    {% endif %}
+  </div>
+  <div class="post-nav-next">
+    {% if page.next.url %}
+    <a href="{{page.next.url}}">{{page.next.title}}&nbsp;&raquo;</a>
+    {% endif %}
+  </div>
+</div>

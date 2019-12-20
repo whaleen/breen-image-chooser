@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="{{ site.url }}/css/normalize.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/tachyons.min.css">
+  <link rel="stylesheet" href="{{ site.url }}/css/tachyons-animate.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="{{ site.url }}/css/hover.css">
+  <!-- Google Fonts: Poppins, serif fallback-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+        body {
+          font-family: 'Poppins', serif;
+        }
+        .dn { display: none; }
+      </style>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+</head>
+
+
+<body class="">
+
+
+
+<section id="page" class="mw5 mw9-ns center pa3 ph5-ns mt3">
+<div class="">
+{% include nav.html %}
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+
+
+
+    <article class="vh-100 dt w-100 ">
+
+      <script>
+      function PressA() {
+        document.getElementById("NextButton").classList.remove('dn');
+        document.getElementById("ImageB").classList.add('o-40');
+      }
+      function PressB() {
+        document.getElementById("NextButton").classList.remove('dn');
+        document.getElementById("ImageA").classList.add('o-40');
+
+      }
+      </script>
+
+      <div class="tc ph3 ph4-l">
+        <div class="f2 tc ttu gray tracked pa0">{{ post.categories }}</div>
+
+        <article class="cf ttu">
+
+          <a id="ImageA" href="#" class="pa3 fl w-100 w-50-ns white tc link" onclick="PressA()">
+            <div class="washed-red pt1">
+            <h2>Image A <i class="fa fa-thumbs-up hvr-icon"></i></h2>
+            <img src="http://lorempixel.com/700/400/{{ post.categories }}/4/">
+            </div>
+          </a>
+
+          <a id="ImageB" href="#" class="pa3 fl w-100 w-50-ns white tc link" onclick="PressB()">
+            <div class="washed-red pt1">
+            <h2>Image B <i class="fa fa-thumbs-up hvr-icon"></i></h2>
+            <img src="http://lorempixel.com/700/400/{{ post.categories }}/5/">
+            </div>
+          </a>
+
+        </article>
+
+        <!-- hidden by .dn (display: none;) -->
+        <div class="flex items-center justify-center pa4 dn" id="NextButton">
+          {% if paginator.total_pages > 1 %}
+
+              {% if paginator.previous_page %}
+              <!-- <li class="previous">
+                  <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+              </li> -->
+              {% endif %}
+              {% if paginator.next_page %}
+              <div class="next">
+                  <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="f3 link dim ph3 pv2 mb2 dib white bg-dark-pink">Next &rarr;</a>
+              </div>
+              {% else %}
+              <!-- Link to home if at end of pages (posts) -->
+              <div class="next">
+                  <a href="{{ site.url }}">Next &rarr;</a>
+              </div>
+              {% endif %}
+
+          {% endif %}
+        </div>
+
+
+
+
+        <h1>Ut enim as minim vaniam quis nostrud <span class="dark-pink">laboris</span></h1>
+
+      </div>
+    </article>
+
+    {% endfor %}
+  </ul>
+
+</div>
+
+</div>
+</section>
+
+</body>
+
+</html>
