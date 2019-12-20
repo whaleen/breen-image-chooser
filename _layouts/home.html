@@ -37,21 +37,8 @@
   <ul class="post-list">
     {% for post in paginator.posts %}
 
-
-
     <article class="vh-100 dt w-100 ">
 
-      <script>
-      function PressA() {
-        document.getElementById("NextButton").classList.remove('dn');
-        document.getElementById("ImageB").classList.add('o-40');
-      }
-      function PressB() {
-        document.getElementById("NextButton").classList.remove('dn');
-        document.getElementById("ImageA").classList.add('o-40');
-
-      }
-      </script>
 
       <div class="tc ph3 ph4-l">
         <div class="f2 tc ttu gray tracked pa0">{{ post.categories }}</div>
@@ -112,6 +99,19 @@
 
 </div>
 </section>
+
+<script>
+function PressA() {
+  document.getElementById("NextButton").classList.remove('dn');
+  document.getElementById("ImageB").classList.add('o-40');
+}
+function PressB() {
+  document.getElementById("NextButton").classList.remove('dn');
+  document.getElementById("ImageA").classList.add('o-40');
+
+}
+</script>
+
 
 </body>
 
